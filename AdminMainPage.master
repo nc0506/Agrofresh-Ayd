@@ -1,0 +1,144 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="AdminMainPage.master.cs" Inherits="MainPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head runat="server">
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Agrofresh-AYD</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,400">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Droid+Sans">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lobster">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet" href="assets/css/magnific-popup.css">
+    <link rel="stylesheet" href="assets/flexslider/flexslider.css">
+    <link rel="stylesheet" href="assets/css/form-elements.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/media-queries.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+    <script language="Javascript">
+        function isNumberKey(evt) {
+            var charCode = (evt.which) ? evt.which : evt.keyCode;
+            if (charCode > 31 && (charCode < 48 || charCode > 57))
+                return false;
+            return true;
+        }
+    </script>
+
+</head>
+
+<body>
+    <form id="form1" runat="server">
+
+        <!-- Top menu -->
+        <nav class="navbar" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#top-navbar-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="home.aspx">.</a>
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="top-navbar-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="AddPerson.aspx"><i class="fa fa-home"></i>
+                                <br>
+                                Add Person</a>
+                        </li>
+
+
+                        <li>
+                            <a href="order.aspx"><i class="fa fa-tasks"></i>
+                                <br>
+                                Place Order</a>
+                        </li>
+                        <li class="active">
+                            <a href="report.aspx"><i class="fa fa-tasks"></i>
+                                <br>
+                                Report</a>
+                        </li>
+                        <li><a href="assignDelivery.aspx"><i class="fa fa-tasks"></i>
+                            <br>
+                            Delivery Status </a></li>
+
+                        <li><a href="RateMaster.aspx"><i class="fa fa-tasks"></i>
+                            <br>
+                            Rate  </a>
+
+                        </li>
+                        <li><a href="AddProduct.aspx"><i class="fa fa-tasks"></i>
+                            <br>
+                            AddProduct  </a>
+
+                        </li>
+                        <li><a href="editOrder.aspx"><i class="fa fa-tasks"></i>
+                            <br>
+                            Make Zero  </a>
+
+                        </li>
+                        <li><a href="../Login.aspx"><i class="fa fa-tasks"></i>
+                            <br>
+                            logout </a></li>
+                        <li>
+                            <a href="https://www.facebook.com/agrofresh1" target="_blank">
+                                <asp:Image ID="Image1" runat="server" ImageUrl="~/img/download.png" Width="50px" />
+                            </a>
+
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Page Title -->
+        <div class="page-title-container">
+        </div>
+
+        <!-- About Us Text -->
+        <div class="about-us-container">
+            <div class="container">
+                <div class="row">
+                    <asp:HiddenField ID="hdnLoginName" runat="server" />
+                    <asp:HiddenField ID="hdnRecogniseID" runat="server" />
+                    <asp:HiddenField ID="hdnLoginID" runat="server" />
+                    <asp:ScriptManager ID="ScriptManager1" runat="server" />
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+
+
+
+                    <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                        <ContentTemplate>
+                            <asp:Timer ID="Timer1" runat="server" />
+                        </ContentTemplate>
+                    </asp:UpdatePanel>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+
+    </form>
+</body>
+</html>
